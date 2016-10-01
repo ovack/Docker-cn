@@ -174,11 +174,19 @@ Docker服务的可扩展性是Docker的重要性能之一。
 
 Docker images are read-only templates from which Docker containers are instantiated. Each image consists of a series of layers. Docker uses [union file systems](http://en.wikipedia.org/wiki/UnionFS) to combine these layers into a single image. Union file systems allow files and directories of separate file systems, known as branches, to be transparently overlaid, forming a single coherent file system.
 
+Docker镜像是从Docker容器中实例化的只读模板。每个镜像由一系列的层组成。Docker使用联合文件系统把这些层组成单个镜像。联合文件系统可以使像分支这样的属于独立文件系统的文件和目录叠加形成一个独立一致的文件系统。
+
 These layers are one of the reasons Docker is so lightweight. When you change a Docker image, such as when you update an application to a new version, a new layer is built and replaces only the layer it updates. The other layers remain intact. To distribute the update, you only need to transfer the updated layer. Layering speeds up distribution of Docker images. Docker determines which layers need to be updated at runtime.
+
+这些层是Docker如此轻量的原因之一。当你改变了你的Docker镜像，比如当你更新你的应用到一个新的版本，Docker仅仅新构建一个层去替换需要更新的层。其他的层保持不变。要分发这个更新，你只需要传输更新过的层就可以了。分层加速了Docker镜像的分发。Docker在运行时很明确的知道哪些层需要更新。
 
 An image is defined in a Dockerfile. Every image starts from a base image, such as `ubuntu`, a base Ubuntu image, or `fedora`, a base Fedora image. You can also use images of your own as the basis for a new image, for example if you have a base Apache image you could use this as the base of all your web application images. The base image is defined using the `FROM` keyword in the dockerfile.
 
+一个镜像通个Dockerfile来定义。每一个镜像开始于基础镜像，比如 `ubuntu`一个基于Ubuntu的镜像，或者是`fedora`一个基于Fedora的镜像。你也可以使用你自己的基础组件作为新的镜像，比如你有一个基于Apache的镜像，你可以使用它作为你所有web应用的基础镜像。基础镜像使用`FROM`关键词在dockerfile中定义
+
 > **Note:** [Docker Hub](https://hub.docker.com/) is a public registry and stores images.
+> 
+> 注意：[Docker Hub](https://hub.docker.com/) 是一个存储镜像的公共仓库。
 
 The docker image is built from the base image using a simple, descriptive set of steps we call _instructions_, which are stored in a `Dockerfile`. Each instruction creates a new layer in the image. Some examples of Dockerfile instructions are:
 
@@ -189,7 +197,17 @@ The docker image is built from the base image using a simple, descriptive set of
 * Create an environment variable \(`ENV`\)
 * What process to run when launching a container from this image \(`CMD`\)
 
+Docker镜像通过存储在Dockerfile中一系列简单，我们称之为指令的描述性设定构建。每一条指令在镜像中创建一个新的层。一些Dockerfile指令比如：
+* 指定基础镜像\(`FROM`\)
+* 指定维护\(`MAINTAINER`\)
+* 运行一个命令\(`RUN`\)
+* 添加一个文件或目录\(`ADD`\)
+* 创建一个环境变量\(`ENV`\)
+* 当从这个镜像中运行一个容器时运行哪个进程 \(`CMD`\)
+
 Docker reads this `Dockerfile` when you request a build of an image, executes the instructions, and returns the image.
+
+Docker读取`Dockerfile` 当你请求构建一个镜像，执行指令，返回镜像。
 
 ### How does a Docker registry work?
 
