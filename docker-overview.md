@@ -78,27 +78,53 @@ Docker’s container-based platform allows for highly portable workloads. Docker
 
 Docker’s portability and lightweight nature also make it easy to dynamically manage workloads, scaling up or tearing down applications and services as business needs dictate, in near real time.
 
+_响应式部署和扩大_
 
+Docker基于容器的平台允许高可移植工作量。Docker容器可以运行在开发者自己的本地机器上，在物理或虚拟的数据中心，在云端，或者在混合环境中。
+
+为了业务需求，Docker的可移植性和天然的轻量可以很方便快速的动态管理负载，扩大或拆除业务。
 
 _Running more workloads on the same hardware_
 
 Docker is lightweight and fast. It provides a viable, cost-effective alternative to hypervisor-based virtual machines, allowing you to use more of your compute capacity to achieve your business goals. This is useful in high density environments and for small and medium deployments where you need to do more with fewer resources.
 
+_在相同的硬件上完成更多的工作量_
+
+Docker是轻量高效的。它提供一个可行的，花费少的虚拟机替代品，允许你使用你的电脑实现更多的商业价值。这对于在更少的资源上运行更多的中小型应用非常有用。
+
 ## What is Docker’s architecture?
+
+## 什么是Docker的构筑哲学？
 
 Docker uses a client-server architecture. The Docker _client_ talks to the Docker _daemon_, which does the heavy lifting of building, running, and distributing your Docker containers. The Docker client and daemon _can_ run on the same system, or you can connect a Docker client to a remote Docker daemon. The Docker client and daemon communicate via sockets or through a REST API.
 
+Docker 使用client-server的构建方式。_client_和_Docker_守护进程进行通讯，来进行构建，运行，和支配你的Docker容器。Docker的client和守护进程可以运行在相同的系统上，或者你可以Docker client连接远程的Docker守护进程。Docker client通过REST API 使用sockets和守护进程进行通讯。
+
+![](/assets/architecture.svg)
+
 ### The Docker daemon
+
+### Docker 守护进程
 
 The Docker daemon runs on a host machine. The user uses the Docker client to interact with the daemon.
 
+Docekr守护进程运行在主机上。用户通过Docker client和守护进程通讯。
+
 ### The Docker client
+
+### Docker 客户端
 
 The Docker client, in the form of the `docker` binary, is the primary user interface to Docker. It accepts commands and configuration flags from the user and communicates with a Docker daemon. One client can even communicate with multiple unrelated daemons.
 
+Docker client是`docker`的组成部分之一，是Docker主要的用户界面。主要接受从用户发出的命令和配置标识来和Docker守护进程通讯。一个client可以和多个不相关的守护进程通讯。
+
 ### Inside Docker
 
+### 走进Docker
+
 To understand Docker’s internals, you need to know about _images_, _registries_, and _containers_.
+
+要了解Docker的里面，你需要知道镜像，登记，和容器。
 
 #### Docker images
 
