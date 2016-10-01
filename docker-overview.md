@@ -18,7 +18,6 @@ Docker provides tooling and a platform to manage the lifecycle of your container
 
 Docker允许你在一个轻量隔离的容器中打包和运行应用。隔离和安全允许你在同一台机器上运行多个容器。由于容器天生的轻量级，相比虚拟机运行时不需要加载更多的东西，所以你可以在相同的硬件条件下运行更多的数量。
 
-
 Docker为你应用的整个生命周期提供工具和平台：
 
 * 你的应用（包含依赖）打包进容器。
@@ -26,6 +25,8 @@ Docker为你应用的整个生命周期提供工具和平台：
 * 部署这些应用到你的生产环境，无论它是本地的数据中心还是在云端。
 
 ## What is Docker Engine?
+
+## 什么是Docker引擎？
 
 _Docker Engine_ is a client-server application with these major components:
 
@@ -36,11 +37,25 @@ _Docker Engine_ is a client-server application with these major components:
 * A command line interface \(CLI\) client.
 
 
+Docker引擎是一个包含以下几个重要组成部分的client-server应用：
+* server：一个叫做守护进程的长时间运行的程序。
+* REST API：和守护进程通信并告诉它该做什么的具体接口。
+* client： 命令行（CLI）
+
+![](/assets/engine-components-flow.png)
 The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands. Many other Docker applications use the underlying API and CLI.
 
 The daemon creates and manages Docker _objects_, such as images, containers, networks, and data volumes.
 
+CLI通过Docker REST API使用脚本或者直接的CLI命令控制器Docker守护进程。许多其他的Docker应用使用底层的API和CLI。
+
+守护进程创建和管理Docker对象，比如镜像，容器，网络，和数据卷。
+
 > **Note:** Docker is licensed under the open source Apache 2.0 license.
+> 
+> 注意：Docker在开源 Apache 2.0 授权之下
+
+
 
 ## What can I use Docker for?
 
@@ -148,7 +163,7 @@ When you run this command, Docker Engine does the following:
 
 2. **Creates a new container:** Docker uses the image to create a container.
 
-3. **Allocates a filesystem and mounts a read-write ****_layer_****:** The container is created in the file system and a read-write layer is added to the image.
+3. **Allocates a filesystem and mounts a read-write \*\***_layer_**\*\*:** The container is created in the file system and a read-write layer is added to the image.
 
 4. **Allocates a network \/ bridge interface:** Creates a network interface that allows the Docker container to talk to the local host.
 
