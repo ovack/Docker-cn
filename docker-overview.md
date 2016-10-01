@@ -124,15 +124,21 @@ Docker client是`docker`的组成部分之一，是Docker主要的用户界面�
 
 To understand Docker’s internals, you need to know about _images_, _registries_, and _containers_.
 
-要了解Docker的里面，你需要知道镜像，登记，和容器。
+要了解Docker的里面，你需要知道镜像，仓库，和容器。
 
 #### Docker images
+
+#### Docker 镜像
 
 A Docker _image_ is a read-only template with instructions for creating a Docker container. For example, an image might contain an Ubuntu operating system with Apache web server and your web application installed. You can build or update images from scratch or download and use images created by others. An image may be based on, or may extend, one or more other images. A docker image is described in text file called a _Dockerfile_, which has a simple, well-defined syntax. For more details about images, see [How does a Docker image work?](https://docs.docker.com/engine/understanding-docker/#how-does-a-docker-image-work).
 
 Docker images are the **build** component of Docker.
 
+Docker镜像就是创建容器的只读模板。举个栗子，一个包含Ubuntu系统，Apache，你的web应用的镜像。你可以通过下载或拼凑创建或更新容器，你也可以使用别人创建的镜像。一个镜像可能基于或者扩展一个或其他几个镜像。每个docker镜像通过简单并具有完整规则的_Dockerfile_来描述。更多关于镜像的信息，查看[ Docker镜像是怎么工作的？](# Docker镜像是怎么工作的？)
+
 #### Docker containers
+
+#### Docker 容器
 
 A Docker container is a runnable instance of a Docker image. You can run, start, stop, move, or delete a container using Docker API or CLI commands. When you run a container, you can provide configuration metadata such as networking information or environment variables. Each container is an isolated and secure application platform, but can be given access to resources running in a different host or container, as well as persistent storage or databases. For more details about containers, see [How does a container work?](https://docs.docker.com/engine/understanding-docker/#how-does-a-container-work).
 
@@ -140,17 +146,23 @@ Docker containers are the **run** component of Docker.
 
 #### Docker registries
 
+#### Docker 仓库
+
 A docker registry is a library of images. A registry can be public or private, and can be on the same server as the Docker daemon or Docker client, or on a totally separate server. For more details about registries, see [How does a Docker registry work?](https://docs.docker.com/engine/understanding-docker/#how-does-a-docker-registry-work)
 
 Docker registries are the **distribution** component of Docker.
 
 #### Docker services
 
+#### Docker 服务
+
 A Docker _service_ allows a _swarm_ of Docker nodes to work together, running a defined number of instances of a replica task, which is itself a Docker image. You can specify the number of concurrent replica tasks to run, and the swarm manager ensures that the load is spread evenly across the worker nodes. To the consumer, the Docker service appears to be a single application. Docker Engine supports swarm mode in Docker 1.12 and higher.
 
 Docker services are the **scalability** component of Docker.
 
 ### How does a Docker image work?
+
+### Docker镜像是怎么工作的?
 
 Docker images are read-only templates from which Docker containers are instantiated. Each image consists of a series of layers. Docker uses [union file systems](http://en.wikipedia.org/wiki/UnionFS) to combine these layers into a single image. Union file systems allow files and directories of separate file systems, known as branches, to be transparently overlaid, forming a single coherent file system.
 
@@ -173,6 +185,8 @@ Docker reads this `Dockerfile` when you request a build of an image, executes th
 
 ### How does a Docker registry work?
 
+### Docker仓库是怎么工作的?
+
 A Docker registry stores Docker images. After you build a Docker image, you can _push_ it to a public registry such as[Docker Hub](https://hub.docker.com/) or to a private registry running behind your firewall. You can also search for existing images and pull them from the registry to a host.
 
 [Docker Hub](http://hub.docker.com/) is a public Docker registry which serves a huge collection of existing images and allows you to contribute your own. For more information, go to [Docker Registry](https://docs.docker.com/registry/overview/) and [Docker Trusted Registry](https://docs.docker.com/docker-trusted-registry/overview/).
@@ -181,9 +195,13 @@ A Docker registry stores Docker images. After you build a Docker image, you can 
 
 ### How does a container work?
 
+### 容器是怎么工作的?
+
 A container uses the host machine’s Linux kernel, and consists of any extra files you add when the image is created, along with metadata associated with the container at creation or when the container is started. Each container is built from an image. The image defines the container’s contents, which process to run when the container is launched, and a variety of other configuration details. The Docker image is read-only. When Docker runs a container from an image, it adds a read-write layer on top of the image \(using a UnionFS as we saw earlier\) in which your application runs.
 
 #### What happens when you run a container?
+
+#### 当你运行容器时发生了什么?
 
 When you use the `docker run` CLI command or the equivalent API, the Docker Engine client instructs the Docker daemon to run a container. This example tells the Docker daemon to run a container using the `ubuntu` Docker image, to remain in the foreground in interactive mode \(`-i`\), and to run the `/bin/bash` command.
 
@@ -213,9 +231,13 @@ Your container is now running. You can manage and interact with it, use the serv
 
 ## The underlying technology
 
+## 底层技术
+
 Docker is written in [Go](https://golang.org/) and takes advantage of several features of the Linux kernel to deliver its functionality.
 
 ### Namespaces
+
+### 命名空间
 
 Docker uses a technology called `namespaces` to provide the isolated workspace called the _container_. When you run a container, Docker creates a set of _namespaces_ for that container.
 
@@ -231,13 +253,19 @@ Docker Engine uses namespaces such as the following on Linux:
 
 ### Control groups
 
+### 控制集合
+
 Docker Engine on Linux also relies on another technology called _control groups_ \(`cgroups`\). A cgroup limits an application to a specific set of resources. Control groups allow Docker Engine to share available hardware resources to containers and optionally enforce limits and constraints. For example, you can limit the memory available to a specific container.
 
 ### Union file systems
 
+### 联合文件系统
+
 Union file systems, or UnionFS, are file systems that operate by creating layers, making them very lightweight and fast. Docker Engine uses UnionFS to provide the building blocks for containers. Docker Engine can use multiple UnionFS variants, including AUFS, btrfs, vfs, and DeviceMapper.
 
 ### Container format
+
+### 容器格式化
 
 Docker Engine combines the namespaces, control groups, and UnionFS into a wrapper called a container format. The default container format is `libcontainer`. In the future, Docker may support other container formats by integrating with technologies such as BSD Jails or Solaris Zones.
 
