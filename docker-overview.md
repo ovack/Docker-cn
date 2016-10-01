@@ -198,6 +198,7 @@ The docker image is built from the base image using a simple, descriptive set of
 * What process to run when launching a container from this image \(`CMD`\)
 
 Docker镜像通过存储在Dockerfile中一系列简单，我们称之为指令的描述性设定构建。每一条指令在镜像中创建一个新的层。一些Dockerfile指令比如：
+
 * 指定基础镜像\(`FROM`\)
 * 指定维护\(`MAINTAINER`\)
 * 运行一个命令\(`RUN`\)
@@ -215,9 +216,15 @@ Docker读取`Dockerfile` 当你请求构建一个镜像，执行指令，返回�
 
 A Docker registry stores Docker images. After you build a Docker image, you can _push_ it to a public registry such as[Docker Hub](https://hub.docker.com/) or to a private registry running behind your firewall. You can also search for existing images and pull them from the registry to a host.
 
+一个Docker仓库保存着Docker镜像。在你创建一个Docker镜像之后，你可以把它推送到像[Docker Hub ](https://hub.docker.com/)一样的公共仓库或运行在你的防火墙之下的私有仓库.你可以搜索已经存在的镜像并且把它们从一个仓库推送到主机上。
+
 [Docker Hub](http://hub.docker.com/) is a public Docker registry which serves a huge collection of existing images and allows you to contribute your own. For more information, go to [Docker Registry](https://docs.docker.com/registry/overview/) and [Docker Trusted Registry](https://docs.docker.com/docker-trusted-registry/overview/).
 
+[Docker Hub](http://hub.docker.com/) 是一个存着大量镜像并允许推送镜像的公开的Docker仓库。了解更多，去[Docker Registry](https://docs.docker.com/registry/overview/) 和 Docker Trusted Registry 。
+
 [Docker store](http://store.docker.com/) allows you to buy and sell Docker images. For image, you can buy a Docker image containing an application or service from the software vendor, and use the image to deploy the application into your testing, staging, and production environments, and upgrade the application by pulling the new version of the image and redeploying the containers. Docker Store is currently in private beta.
+
+[Docker store](http://store.docker.com/)允许你买卖Docker镜像。你可以从软件商那里购买一个包含应用和服务的镜像，然后使用这个镜像部署你的应用到你的测试，生产环境，通过推送新的镜像升级你的应用并重新部署容器。Docker商店目前是测试版本。
 
 ### How does a container work?
 
