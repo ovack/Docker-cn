@@ -38,6 +38,7 @@ _Docker Engine_ is a client-server application with these major components:
 
 
 Docker引擎是一个包含以下几个重要组成部分的client-server应用：
+
 * server：一个叫做守护进程的长时间运行的程序。
 * REST API：和守护进程通信并告诉它该做什么的具体接口。
 * client： 命令行（CLI）
@@ -55,9 +56,9 @@ CLI通过Docker REST API使用脚本或者直接的CLI命令控制器Docker守�
 > 
 > 注意：Docker在开源 Apache 2.0 授权之下
 
-
-
 ## What can I use Docker for?
+
+## 我可以用Docker做什么？
 
 _Fast, consistent delivery of your applications_
 
@@ -65,11 +66,19 @@ Docker can streamline the development lifecycle by allowing developers to work i
 
 Consider the following example scenario. Your developers write code locally and share their work with their colleagues using Docker containers. They can use Docker to push their applications into a test environment and execute automated and manual tests. When developers find problems, they can fix them in the development environment and redeploy them to the test environment for testing. When testing is complete, getting the fix to the customer is as simple as pushing the updated image to the production environment.
 
+_快速，一致的分发你的应用_
+
+开发者通过使用标准统一的本地化Docker容器使开发工作流程化。你可以将Docker统一到你的持续集成和持续开发工作流程中。
+
+想象一下以下示例情景。你的开发人员通过容器向他的同事分享他的工作成果。他们可以把她们的应用推送到测试环境进行自动化测试。当开发者发现问题，然后他们在开发环境修复这些问题并重新部署到测试环境进行测试。当测试通过，推送到客户那里就仅仅是简单的推送到生产环境。
+
 _Responsive deployment and scaling_
 
 Docker’s container-based platform allows for highly portable workloads. Docker containers can run on a developer’s local host, on physical or virtual machines in a data center, in the Cloud, or in a mixture of environments.
 
 Docker’s portability and lightweight nature also make it easy to dynamically manage workloads, scaling up or tearing down applications and services as business needs dictate, in near real time.
+
+
 
 _Running more workloads on the same hardware_
 
