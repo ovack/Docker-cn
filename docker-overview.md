@@ -134,7 +134,7 @@ A Docker _image_ is a read-only template with instructions for creating a Docker
 
 Docker images are the **build** component of Docker.
 
-Docker镜像就是创建容器的只读模板。举个栗子，一个包含Ubuntu系统，Apache，你的web应用的镜像。你可以通过下载或拼凑创建或更新容器，你也可以使用别人创建的镜像。一个镜像可能基于或者扩展一个或其他几个镜像。每个docker镜像通过简单并具有完整规则的_Dockerfile_来描述。更多关于镜像的信息，查看[ Docker镜像是怎么工作的？](# Docker镜像是怎么工作的？)
+Docker镜像就是创建容器的只读模板。举个栗子，一个包含Ubuntu系统，Apache，和你的web应用的镜像。你可以通过下载或拼凑创建或更新容器，你也可以使用别人创建的镜像。一个镜像可能基于或者扩展一个或其他几个镜像。每个docker镜像通过简单并具有完整规则的_Dockerfile_来描述。更多关于镜像的信息，查看[ Docker镜像是怎么工作的？](#how-does-a-docker-image-work)
 
 #### Docker containers
 
@@ -144,6 +144,8 @@ A Docker container is a runnable instance of a Docker image. You can run, start,
 
 Docker containers are the **run** component of Docker.
 
+Docker容器是Docker镜像的一个运行实例。你可以使用Docker的API或CLI命令行运行，开始，停止，移动或删除容器。当你运行一个容器，你可以提供配置元数据比如网络信息或环境变量。每一个容器就是一个独立和安全的应用平台，但是它可以使资源运行在不同的主机或容器，比如独立的存储或数据库。更多关于容器的介绍，查看：[容器是怎么工作的？](#how-does-a-container-work)
+
 #### Docker registries
 
 #### Docker 仓库
@@ -152,6 +154,8 @@ A docker registry is a library of images. A registry can be public or private, a
 
 Docker registries are the **distribution** component of Docker.
 
+一个Docker仓库就是镜像的图书馆。一个仓库既可以是公开的也可以是私有的，并且可以作为Docker守护进程或Docker客户端在同一服务器或独立的服务器上。更多关于仓库的细节，查看 [Docker是怎么工作的？](#how-does-a-docker-registry-work)
+
 #### Docker services
 
 #### Docker 服务
@@ -159,6 +163,10 @@ Docker registries are the **distribution** component of Docker.
 A Docker _service_ allows a _swarm_ of Docker nodes to work together, running a defined number of instances of a replica task, which is itself a Docker image. You can specify the number of concurrent replica tasks to run, and the swarm manager ensures that the load is spread evenly across the worker nodes. To the consumer, the Docker service appears to be a single application. Docker Engine supports swarm mode in Docker 1.12 and higher.
 
 Docker services are the **scalability** component of Docker.
+
+Docker服务支持多个Docker节点协同的集群工作，运行一个定义的副本任务，它们本身就是一个Docker镜像。你可以指定同时运行任务的数量，并且集群管理确保压力被分散到各个工作节点。对于顾客，Docker服务显示为单个应用。Docker引擎支持集群在Docker1.12或更高的版本。
+
+Docker服务的可扩展性是Docker的重要性能之一。
 
 ### How does a Docker image work?
 
