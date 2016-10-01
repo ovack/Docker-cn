@@ -1,8 +1,12 @@
-# Docker Overview 
+# Docker 概述
 
 Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
 
+Docker是一个为开发，托管，运行应用的开源的平台。Docker允许你从你的基础设施上拆分你的应用，因此你可以进行快速迭代。通过Docker，你可以像管理你的应用那样管理你的基础设施。得益于Docker可以快速的进行托管，测试和部署，你可以显著的节省从编写代码到发布产品所需的时间。
+
 ## What is the Docker platform?
+
+## 什么是Docker平台？
 
 Docker provides the ability to package and run an application in a loosely isolated environment called a container. The isolation and security allow you to run many containers simultaneously on a given host. Because of the lightweight nature of containers, which run without the extra load of a hypervisor, you can run more containers on a given hardware combination than if you were using virtual machines.
 
@@ -11,6 +15,15 @@ Docker provides tooling and a platform to manage the lifecycle of your container
 * Encapsulate your applications \(and supporting components\) into Docker containers
 * Distribute and ship those containers to your teams for further development and testing
 * Deploy those applications to your production environment, whether it is in a local data center or the Cloud
+
+Docker允许你在一个轻量隔离的容器中打包和运行应用。隔离和安全允许你在同一台机器上运行多个容器。由于容器天生的轻量级，相比虚拟机运行时不需要加载更多的东西，所以你可以在相同的硬件条件下运行更多的数量。
+
+
+Docker为你应用的整个生命周期提供工具和平台：
+
+* 你的应用（包含依赖）打包进容器。
+* 为了未来的开发和测试分发和托管这些容器给你的团队。
+* 部署这些应用到你的生产环境，无论它是本地的数据中心还是在云端。
 
 ## What is Docker Engine?
 
@@ -21,8 +34,6 @@ _Docker Engine_ is a client-server application with these major components:
 * A REST API which specifies interfaces that programs can use to talk to the daemon and instruct it what to do.
 
 * A command line interface \(CLI\) client.
-
-
 
 
 The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands. Many other Docker applications use the underlying API and CLI.
@@ -52,8 +63,6 @@ Docker is lightweight and fast. It provides a viable, cost-effective alternative
 ## What is Docker’s architecture?
 
 Docker uses a client-server architecture. The Docker _client_ talks to the Docker _daemon_, which does the heavy lifting of building, running, and distributing your Docker containers. The Docker client and daemon _can_ run on the same system, or you can connect a Docker client to a remote Docker daemon. The Docker client and daemon communicate via sockets or through a REST API.
-
-
 
 ### The Docker daemon
 
@@ -139,7 +148,7 @@ When you run this command, Docker Engine does the following:
 
 2. **Creates a new container:** Docker uses the image to create a container.
 
-3. **Allocates a filesystem and mounts a read-write **_**layer**_**:** The container is created in the file system and a read-write layer is added to the image.
+3. **Allocates a filesystem and mounts a read-write ****_layer_****:** The container is created in the file system and a read-write layer is added to the image.
 
 4. **Allocates a network \/ bridge interface:** Creates a network interface that allows the Docker container to talk to the local host.
 
