@@ -232,6 +232,8 @@ A Docker registry stores Docker images. After you build a Docker image, you can 
 
 A container uses the host machine’s Linux kernel, and consists of any extra files you add when the image is created, along with metadata associated with the container at creation or when the container is started. Each container is built from an image. The image defines the container’s contents, which process to run when the container is launched, and a variety of other configuration details. The Docker image is read-only. When Docker runs a container from an image, it adds a read-write layer on top of the image \(using a UnionFS as we saw earlier\) in which your application runs.
 
+容器使用宿主机上的Linux内核和用户添加的文件创建，开启或运行时和metadata一起工作。每一个容器都来自一个镜像。镜像定义了容器的内容，运行什么进程，和个性化的配置细节。Docker镜像是只读的。当Docker从镜像上开启一个容器时，它会在镜像的最顶层创建并添加（使用前面提到的联合文件系统）你的应用层。
+
 #### What happens when you run a container?
 
 #### 当你运行容器时发生了什么?
