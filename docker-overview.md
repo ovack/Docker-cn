@@ -271,7 +271,7 @@ When you run this command, Docker Engine does the following:
 3. **分配文件系统并且挂载一个只读层**：容器被创建在文件系统并且只读层被添加到镜像上。
 4. **分配网络\/桥接接口**：创建一份网络接口使Docker可以和本地主机通讯。
 5. **设置IP地址**：从连接池获取可用的IP地址。
-6. **执行你指定的进程**：执行`/bin/bash `。
+6. **执行你指定的进程**：执行`/bin/bash`。
 7. **捕获并提供应用输出**：由于你开启交互模式，Docker提供标准的日志输入输出和错误，让你知道你的应用的运行状态。
 
 Your container is now running. You can manage and interact with it, use the services and applications it provides, and eventually stop and remove it.
@@ -284,13 +284,19 @@ Your container is now running. You can manage and interact with it, use the serv
 
 Docker is written in [Go](https://golang.org/) and takes advantage of several features of the Linux kernel to deliver its functionality.
 
+Docker使用[Go](https://golang.org/)语言编写,充分利用Linux内核的多个优势功能取实现其功能。
+
 ### Namespaces
 
 ### 命名空间
 
 Docker uses a technology called `namespaces` to provide the isolated workspace called the _container_. When you run a container, Docker creates a set of _namespaces_ for that container.
 
+Docker使用命名空间技术为容器提供隔离的工作环境。当你运行一个容器时，Docker为这个容器创建命名空间。
+
 These namespaces provide a layer of isolation. Each aspect of a container runs in a separate namespace and its access is limited to that namespace.
+
+这些命名空间提供一个隔离层。每个容器运行在独立的命名空间，且访问权限限定在命名空间里面。
 
 Docker Engine uses namespaces such as the following on Linux:
 
@@ -299,6 +305,13 @@ Docker Engine uses namespaces such as the following on Linux:
 * **The **`ipc`** namespace:** Managing access to IPC resources \(IPC: InterProcess Communication\).
 * **The **`mnt`** namespace:** Managing filesystem mount points \(MNT: Mount\).
 * **The **`uts`** namespace:** Isolating kernel and version identifiers. \(UTS: Unix Timesharing System\).
+
+Docker使用的命名空间，如在Linux下面：
+* `pid`命名空间：进程隔离\(PID: Process ID\)。
+* `net`命名空间：网络接口管理 \(NET: Networking\)。
+* `ipc`命名空间：进程间通讯管理 \(IPC: InterProcess Communication\)。
+* `mnt`命名空间：文件系统挂载点管理\(MNT: Mount\)。
+* `uts`命名空间：隔离内核和版本标识符\(UTS: Unix Timesharing System\)。
 
 ### Control groups
 
