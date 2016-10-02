@@ -307,6 +307,7 @@ Docker Engine uses namespaces such as the following on Linux:
 * **The **`uts`** namespace:** Isolating kernel and version identifiers. \(UTS: Unix Timesharing System\).
 
 Docker使用的命名空间，如在Linux下面：
+
 * `pid`命名空间：进程隔离\(PID: Process ID\)。
 * `net`命名空间：网络接口管理 \(NET: Networking\)。
 * `ipc`命名空间：进程间通讯管理 \(IPC: InterProcess Communication\)。
@@ -315,9 +316,11 @@ Docker使用的命名空间，如在Linux下面：
 
 ### Control groups
 
-### 控制集合
+### 控制组
 
 Docker Engine on Linux also relies on another technology called _control groups_ \(`cgroups`\). A cgroup limits an application to a specific set of resources. Control groups allow Docker Engine to share available hardware resources to containers and optionally enforce limits and constraints. For example, you can limit the memory available to a specific container.
+
+Docker引擎使用了Linux另一项叫做控制组的技术（`cgroups`）。一个控制组限定程序访问指定的资源。控制组允许Docker引擎分享可用的硬件资源可选强制限制和约束给容器。比如你可以限制指定容器的内存大小。
 
 ### Union file systems
 
@@ -325,9 +328,13 @@ Docker Engine on Linux also relies on another technology called _control groups_
 
 Union file systems, or UnionFS, are file systems that operate by creating layers, making them very lightweight and fast. Docker Engine uses UnionFS to provide the building blocks for containers. Docker Engine can use multiple UnionFS variants, including AUFS, btrfs, vfs, and DeviceMapper.
 
+联合文件系统是创建层的运转系统，使层非常轻量和快速。Docker引擎使用联合文件系统提供构建块给容器。Docker可以使用联合文件系统变体，比如 AUFS, btrfs, vfs, and DeviceMapper。
+
 ### Container format
 
 ### 容器格式化
 
 Docker Engine combines the namespaces, control groups, and UnionFS into a wrapper called a container format. The default container format is `libcontainer`. In the future, Docker may support other container formats by integrating with technologies such as BSD Jails or Solaris Zones.
+
+Docker引擎把命名空间，控制组，和联合文件系统包装进一个层这叫做容器格式化。默认的容器格式化叫做`libcontainer`。未来，Docker可能支持其他的容器格式化技术，比如BSD Jails 或 Solaris Zones。
 
