@@ -240,7 +240,9 @@ A container uses the host machine’s Linux kernel, and consists of any extra fi
 
 When you use the `docker run` CLI command or the equivalent API, the Docker Engine client instructs the Docker daemon to run a container. This example tells the Docker daemon to run a container using the `ubuntu` Docker image, to remain in the foreground in interactive mode \(`-i`\), and to run the `/bin/bash` command.
 
-```
+当你执行`docker run`命令或相应的api，Docker引擎客户端命令Docker守护进程运行一个容器。这个例子告诉Docker守护进程运行一个`ubuntu`Docker 镜像，开启交互模式（`-i`），并且运行`/bin/bash`命令
+
+```bash
 $ docker run -i -t ubuntu /bin/bash
 
 ```
@@ -262,7 +264,19 @@ When you run this command, Docker Engine does the following:
 7. **Captures and provides application output:** Connects and logs standard input, outputs and errors for you to see how your application is running, because you requested interactive mode.
 
 
+当你运行这条命令，Docker引擎做了以下几件事：
+
+1. **拉取**`ubuntu`**镜像**： Docker引擎检查`ubuntu`镜像是否存在。如果本地已经有这个镜像，Docker引擎使用它创建新的容器。如果没有，然后Docker引擎就从[Docker Hub](https://hub.docker.com/)上拉取。
+2. **创建一个新的容器**：Docker使用镜像创建一个容器。
+3. **分配文件系统并且挂载一个只读层**：容器被创建在文件系统并且只读层被添加到镜像上。
+4. **分配网络\/桥接接口**：创建一份网络接口使Docker可以和本地主机通讯。
+5. **设置IP地址**：从连接池获取可用的IP地址。
+6. **执行你指定的进程**：执行`/bin/bash `。
+7. **捕获并提供应用输出**：由于你开启交互模式，Docker提供标准的日志输入输出和错误，让你知道你的应用的运行状态。
+
 Your container is now running. You can manage and interact with it, use the services and applications it provides, and eventually stop and remove it.
+
+你的容器现在正在运行。你可以使用它提供的服务和应用管理并控制它，并最终停止并删除它。
 
 ## The underlying technology
 
