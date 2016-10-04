@@ -6,6 +6,7 @@ You have two options for installing Docker on Mac:
 * [Docker Toolbox](https://docs.docker.com/engine/installation/mac/#docker-toolbox)
 
 在Mac上安装Docker你有两个选项：
+
 * [Docker for Mac](https://docs.docker.com/engine/installation/mac/#docker-for-mac)
 * [Docker Toolbox](https://docs.docker.com/engine/installation/mac/#docker-toolbox)
 
@@ -29,6 +30,14 @@ Go to [Getting Started with Docker for Mac](https://docs.docker.com/docker-for-m
 
 * VirtualBox prior to version 4.3.30 must NOT be installed \(it is incompatible with Docker for Mac\). Docker for Mac will error out on install in this case. Uninstall the older version of VirtualBox and re-try the install.
 
+
+**硬件需求**
+
+* 2010年或更新的Mac，支持虚拟内存管理的Intel硬件；也就是扩展页表。
+* OS X 10.10.3 Yosemite或更新的系统。
+
+* 至少4G内存。
+* 不能安装4.3.30之前版本的VirtualBox（和Docker for Mac不兼容）。Docker for Mac 会在安装之前版本VirtualBox的机器上出错。写在老版本的VirtualBox然后重新安装Docker for Mac。
 
 ## Docker Toolbox
 
