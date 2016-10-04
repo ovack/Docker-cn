@@ -5,6 +5,17 @@
         "anchors-zhcn",
         "atoc",
         "tree",
-        "page-treeview"
-    ]
+        "maxiang"
+    ],
+    "pluginsConfig": {
+        "sharing": {
+            "facebook": true,
+            "twitter": true,
+            "google": true,
+            "weibo": true,
+            "instapaper": false,
+            "vk": false,
+            "all": "facebook,google,twitter,weibo,instapaper"
+        }
+    }
 }
