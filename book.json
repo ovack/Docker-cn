@@ -4,8 +4,7 @@
         "katex",
         "anchors-zhcn",
         "atoc",
-        "tree",
-        "maxiang"
+        "tree"
     ],
     "pluginsConfig": {
         "sharing": {
@@ -16,6 +15,10 @@
             "instapaper": false,
             "vk": false,
             "all": "facebook,google,twitter,weibo,instapaper"
+        },
+        "theme-default": {
+            "styles": "",
+            "showLevel": true
         }
     }
 }
