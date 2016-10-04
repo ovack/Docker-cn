@@ -14,7 +14,7 @@ You have two options for installing Docker on Mac:
 
 Docker for Mac is our newest offering for the Mac. It runs as a native Mac application and uses [xhyve](https://github.com/mist64/xhyve/) to virtualize the Docker Engine environment and Linux kernel-specific features for the Docker daemon.
 
-Docker for Mac 是我们最新提供给Mac的。他想原生Mac程序那样运行并且使用[xhyve](https://github.com/mist64/xhyve/)去虚拟Docker引擎环境和Linux内核功能给Docker守护进程。
+Docker for Mac 是我们最新提供给Mac的产品。他像原生Mac程序那样运行并且使用[xhyve](https://github.com/mist64/xhyve/)去虚拟Docker引擎环境和Linux内核功能给Docker守护进程。
 
 Go to [Getting Started with Docker for Mac](https://docs.docker.com/docker-for-mac/) for download and install instructions, and to learn all about Docker for Mac.
 
@@ -74,7 +74,9 @@ Your Mac must be running OS X 10.8 “Mountain Lion” or newer to install the D
 * If you are interested in using the Kitematic GUI, see the [Kitematic user guide](https://docs.docker.com/kitematic/userguide/).
 
 * 如果你是Docker新手，尝试使用[Getting Started](https://docs.docker.com/engine/getstarted/)教程的动手之旅，这包括使用Docker命令行，运行容器，构建镜像和与 Docker Hub一起工作。
+
 * 你可以在 [Learn by example ](https://docs.docker.com/engine/tutorials/)和 [Docker Engine User Guide](https://docs.docker.com/engine/userguide/) 找到更多的例子。
+
 * 如果你有兴趣使用 Kitematic 图形界面, 查看 [Kitematic user guide](https://docs.docker.com/kitematic/userguide/)。
 
 > **Note**: The Boot2Docker command line was deprecated several releases back in favor of Docker Machine, and now Docker for Mac.
