@@ -13,10 +13,6 @@
             "weibo": true,
             "instapaper": false,
             "vk": false
-        },
-        "theme-default": {
-            "styles": "",
-            "showLevel": true
         }
     }
 }
