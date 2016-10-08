@@ -1,4 +1,4 @@
-# 安装教程
+# 安装指南
 
 * **[MAC](./mac-os-x.md)**
 * **[Windows](./windows.md)**
