@@ -6,7 +6,7 @@
   * [安装在Mac OS X](./engine/installation/mac-os-x.md)
   * [安装在Windows](./engine/installation/windows.md)
   * [安装在linux](./engine/installation/linux/README.md)
-    * [安装在Ubuntu](./engine/installation/linux/ubuntulinux.md)
+    * [安装在Ubuntu](engine/installation/linux/ubuntulinux.md)
 
 
 
