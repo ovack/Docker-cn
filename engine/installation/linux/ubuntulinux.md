@@ -16,7 +16,9 @@ Docker需要一个不限版本的64位Ubuntu系统。另外你的内核版本必
 
 要检查你的内核版本，打开终端使用 `uname -r` 命令打印你的内核版本：
 
- ```bash $ uname -r 3.11.0-15-generic ```
+ ```bash 
+ $ uname -r 3.11.0-15-generic 
+ ```
 
 > **注意**：如果你之前使用 `APT` 安装过Docker， 请确保你已经更新过 `APT` 源。
 
