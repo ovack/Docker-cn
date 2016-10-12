@@ -1,4 +1,12 @@
 {
+    "plugins": [
+        "fontsettings",
+        "-highlight",
+        "-lunr",
+        "-search",
+        "codeblock",
+        "advanced-emoji"
+    ],
     "pluginsConfig": {
         "sharing": {
             "facebook": true,
