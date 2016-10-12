@@ -8,6 +8,8 @@ Docker支持这些Ubuntu操作系统：
 
 这篇文章指导你使用Docker-managed的安装包和安装技巧来安装Docker。使用这些安装包确保你安装最新的Docker。如果你希望使用Ubuntu包管理器安装Docker，查看你的Ubuntu文档。
 
+<!-- more -->
+
 > **注意**: Ubuntu Utopic 14.10 and 15.04 在 Docker 的 `APT` 仓库但是很快将不再支持。
 
 ## Prerequisites
@@ -18,10 +20,10 @@ Docker需要一个不限版本的64位Ubuntu系统。另外你的内核版本必
 
 要检查你的内核版本，打开终端使用  `uname -r`  命令打印你的内核版本：
 
-    ```bash
-    $ uname -r
-    3.11.0-15-generic
-    ```
+```bash
+$ uname -r
+3.11.0-15-generic
+```
 
 > **注意**：如果你之前使用 `APT` 安装过Docker， 请确保你已经更新过 `APT` 源。
 
@@ -34,12 +36,12 @@ Docker的 `APT` 仓库包含 1.7.1 和更高的Docker版本。 设置 `APT` 使�
 2. 打开终端窗口。
 
 3. 更新包信息, 确保 APT 工作在 `https` 模式，并且已经安装CA 证书。
-    
+
     ```bash
     $ sudo apt-get update
     $ sudo apt-get install apt-transport-https ca-certificates
     ```
-    
+
 4. 添加新的 `GPG` 密钥。
 
     ```bash
@@ -57,23 +59,23 @@ Docker的 `APT` 仓库包含 1.7.1 和更高的Docker版本。 设置 `APT` 使�
     可能的内容如下：
 
     * On Ubuntu Precise 12.04 (LTS)
-    
+
         ```bash
-          deb https://apt.dockerproject.org/repo ubuntu-precise main
+        deb https://apt.dockerproject.org/repo ubuntu-precise main
         ```
-        
+
     * On Ubuntu Trusty 14.04 (LTS)
 
         ```bash
-          deb https://apt.dockerproject.org/repo ubuntu-trusty main
+        deb https://apt.dockerproject.org/repo ubuntu-trusty main
         ```
-        
+
     * Ubuntu Xenial 16.04 (LTS)
 
         ```bash
-          deb https://apt.dockerproject.org/repo ubuntu-xenial main
+        deb https://apt.dockerproject.org/repo ubuntu-xenial main
         ```
-        
+
     > **注意**: Docker 并没有提供安装包给所有的架构。 你可以每天在https://master.dockerproject.org查看最新的二进制包。 在多架构系统上安装Docker,，需要添加 `[arch=...]`节点。 点击 [Debian Multiarch wiki](https://wiki.debian.org/Multiarch/HOWTO#Setting_up_apt_sources) 获取更多细节。
 
 8. 保存并关闭  `/etc/apt/sources.list.d/docker.list` 文件。
@@ -81,7 +83,7 @@ Docker的 `APT` 仓库包含 1.7.1 和更高的Docker版本。 设置 `APT` 使�
 9. 更新 `APT` 包索引。
 
     ```bash
-     $ sudo apt-get update
+    $ sudo apt-get update
     ```
 
 10. 清除旧的仓库。
@@ -89,7 +91,7 @@ Docker的 `APT` 仓库包含 1.7.1 和更高的Docker版本。 设置 `APT` 使�
     ```bash
     $ sudo apt-get purge lxc-docker
     ```
-    
+
 11. 验证 `APT` 是否从正确的仓库拉取。
 
     ```bash
@@ -191,7 +193,7 @@ Docker的 `APT` 仓库包含 1.7.1 和更高的Docker版本。 设置 `APT` 使�
     ```bash
     $ sudo docker run hello-world
     ```
-    
+
     这条命令下载一个测试镜像并且在一个容器中运行它。当这个容器运行时, 他会打印一些信息然后退出。
 
 ## Optional configurations
@@ -227,7 +229,7 @@ Docker的 `APT` 仓库包含 1.7.1 和更高的Docker版本。 设置 `APT` 使�
     ```bash
     $ sudo usermod -aG docker $USER
     ```
-    
+
 4.  重新登录用户。
 
     确保你的用户拥有正确的权限。
@@ -243,7 +245,7 @@ Docker的 `APT` 仓库包含 1.7.1 和更高的Docker版本。 设置 `APT` 使�
     ```bash
     Cannot connect to the Docker daemon. Is 'docker daemon' running on this host?
     ```
-    
+
     查看 `DOCKER_HOST` 环境变量是否设置，如果没有重新设置它。
 
 ### Adjust memory and swap accounting
@@ -268,7 +270,7 @@ kernel does not support swap limit capabilities. Limitation discarded.
     ```bash
     GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
     ```
-    
+
 4. 保存并关闭文件。
 
 5. 更新 GRUB。
@@ -287,7 +289,7 @@ kernel does not support swap limit capabilities. Limitation discarded.
 
 配置UFW和允许Docker端口流入流量：
 
-1.  使用具有 `sudo` 权限的用户登录系统。
+1. 使用具有 `sudo` 权限的用户登录系统。
 
 2. 验证UFW是否安装和启用。
 
@@ -299,7 +301,7 @@ kernel does not support swap limit capabilities. Limitation discarded.
 
     ```bash
     $ sudo nano /etc/default/ufw
-    ```    
+    ```
 
 4. 设置 `DEFAULT_FORWARD_POLICY` 策略为:
 
@@ -314,7 +316,7 @@ kernel does not support swap limit capabilities. Limitation discarded.
     ```bash
     $ sudo ufw reload
     ```
-    
+
 7. 允许Docker端口的连接。
 
     ```bash
@@ -347,19 +349,19 @@ can't use it. Using default external servers : [8.8.8.8 8.8.4.4]
     ```bash
     $ sudo nano /etc/default/docker
     ```
-    
+
 3. 为Docker添加一项设置。
 
     ```bash
     DOCKER_OPTS="--dns 8.8.8.8"
     ```
-    
+
     替换 `8.8.8.8` 为一个本地 DNS server 比如 `192.168.1.1`。你也可以指定多个DNS servers。 用空格把他们区分开，例如:
 
     ```bash
     --dns 8.8.8.8 --dns 192.168.1.1
     ```
-    
+
     > **警告**: 如果你在一个网络多变的笔记本上做这些配置, 要确保选择一个公共的 DNS server.
 
 4. 保存文件。
@@ -434,5 +436,3 @@ $ rm -rf /var/lib/docker
 ```
 
 你必需手动的删除用户配置文件。
-
-
