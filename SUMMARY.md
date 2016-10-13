@@ -7,6 +7,4 @@
   * [安装在Windows](engine/installation/windows.md)
   * [安装在linux](engine/installation/linux/README.md)
     * [安装在Ubuntu](engine/installation/linux/install-docker-on-ubuntu.md)
-
-
-
+    * [安装在Red Hat Enterprise Linux](engine/installation/linux/rhel.md)
