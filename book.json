@@ -1,4 +1,10 @@
 {
+    "plugins": [
+      "exercises",
+      "katex",
+      "anchors-zhcn",
+      "atoc"
+    ],
     "pluginsConfig": {
         "sharing": {
             "facebook": true,
