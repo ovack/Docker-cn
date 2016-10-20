@@ -1,5 +1,6 @@
 # 安装在linux发行版教程
 
-* **[Ubuntu](./ubuntulinux.md)**
-* **[rhel](./rhel.md)**
+* **[Ubuntu](./Installation-on-ubuntu.md)**
+* **[rhel](./Installation-on-rhel.md)**
 * **[CentOS](./Installation-on-CentOs.md)**
+* **[Fedora](./Installation-on-fedora.md)**
