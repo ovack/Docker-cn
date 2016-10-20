@@ -2,4 +2,4 @@
 
 * **[Ubuntu](./ubuntulinux.md)**
 * **[rhel](./rhel.md)**
-
+* **[CentOS](./Installation-on-CentOs.md)**
