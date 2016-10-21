@@ -10,3 +10,4 @@
     * [安装在Red Hat Enterprise Linux](engine/installation/linux/Installation-on-rhel.md)
     * [安装在CentOS](engine/installation/linux/Installation-on-CentOs.md)
     * [安装在Fedora](engine/installation/linux/Installation-on-fedora.md)
+    * [安装在Debian](engine/installation/linux/Installation-on-Debian.md)
