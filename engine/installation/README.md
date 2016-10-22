@@ -2,5 +2,4 @@
 
 * **[MAC](./mac-os-x.md)**
 * **[Windows](./windows.md)**
-* [**Linux**](./linux/README.md)
-
+* **[Linux](./linux/README.md)**

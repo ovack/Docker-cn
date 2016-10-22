@@ -11,3 +11,4 @@
     * [安装在CentOS](engine/installation/linux/Installation-on-CentOs.md)
     * [安装在Fedora](engine/installation/linux/Installation-on-fedora.md)
     * [安装在Debian](engine/installation/linux/Installation-on-Debian.md)
+    * [安装在Archlinux](engine/installation/linux/Installation-on-Archlinux.md)

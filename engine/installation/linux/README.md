@@ -5,3 +5,4 @@
 * **[CentOS](./Installation-on-CentOs.md)**
 * **[Fedora](./Installation-on-fedora.md)**
 * **[Debian](./Installation-on-Debian.md)**
+* **[Archlinux](./Installation-on-Archlinux.md)**
