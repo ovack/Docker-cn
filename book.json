@@ -1,5 +1,10 @@
 {
     "plugins": [
-        "search-pro"
+        "exercises",
+        "katex",
+        "anchors-zhcn",
+        "atoc",
+        "tree",
+        "page-treeview"
     ]
 }
