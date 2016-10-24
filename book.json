@@ -4,8 +4,6 @@
         "katex",
         "anchors-zhcn",
         "tree",
-        "-page-treeview",
         "atoc"
-    ],
-    "pluginsConfig": {}
+    ]
 }
