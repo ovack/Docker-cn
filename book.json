@@ -2,7 +2,8 @@
     "plugins": [
         "search-pro",
         "tree",
-        "theme-default"
+        "theme-default",
+        "sharing"
     ],
     "pluginsConfig": {}
 }
