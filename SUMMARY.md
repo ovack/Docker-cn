@@ -13,3 +13,4 @@
     * [安装在Debian](engine/installation/linux/Installation-on-Debian.md)
     * [安装在Archlinux](engine/installation/linux/Installation-on-Archlinux.md)
     * [安装在CRUX](engine/installation/linux/Installation-on-cruxlinux.md)
+    * [安装在Gentoo](engine/installation/linux/Installation-on-gentoo.md)
