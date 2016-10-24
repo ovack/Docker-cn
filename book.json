@@ -1,7 +1,8 @@
 {
     "plugins": [
         "search-pro",
-        "tree"
+        "tree",
+        "theme-default"
     ],
     "pluginsConfig": {}
 }
