@@ -8,3 +8,4 @@
 * **[Archlinux](./Installation-on-Archlinux.md)**
 * **[CRUXlinux](./Installation-on-cruxlinux.md)**
 * **[Gentoo](./Installation-on-gentoo.md)**
+* **[Oracle linux](./Installation-on-oraclelinux.md)**
