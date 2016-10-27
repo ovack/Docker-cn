@@ -16,3 +16,4 @@
     * [安装在Gentoo](engine/installation/linux/Installation-on-gentoo.md)
     * [安装在Oracle linux](engine/installation/linux/Installation-on-oraclelinux.md)
     * [安装在SUSE](engine/installation/linux/Installation-on-SUSE.md)
+    * [二进制安装](engine/installation/linux/Installation-from-binaries.md)

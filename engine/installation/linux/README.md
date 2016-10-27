@@ -10,3 +10,4 @@
 *   **[Gentoo](./Installation-on-gentoo.md)**
 *   **[Oracle linux](./Installation-on-oraclelinux.md)**
 *   **[SUSE](./Installation-on-SUSE.md)**
+*   **[binaries](./Installation-from-binaries.md)**
